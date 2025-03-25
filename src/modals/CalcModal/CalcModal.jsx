@@ -1,10 +1,10 @@
 import {useForm} from 'react-hook-form';
-import {useState} from 'react';
+import {useState, useEffect} from 'react';
 import {Modal} from '../../components/Modal/Modal';
 import {Input} from '../../components/Input/Input';
 import {RadioButton} from '../../components/RadioButton/RadioButton';
 import {Button} from '../../components/Button/Button';
-import {getCalculatedPayment} from './utils';
+import {getCalculatedPayment, formatAmount} from './utils';
 import {termOptions, paymentPeriodOptions} from './constants';
 
 import styles from './CalcModal.module.css';
@@ -12,10 +12,6 @@ import styles from './CalcModal.module.css';
 export const CalcModal = (props) => {
   const [isCalculated, setIsCalculated] = useState(false);
   const [paymentPeriod, setPaymentPeriod] = useState('monthly');
-  const [calculatedPayment, setCalculatedPayment] = useState({
-    monthly: 0,
-    yearly: 0,
-  });
 
   const {
     register,
@@ -32,10 +28,16 @@ export const CalcModal = (props) => {
   });
 
   const term = watch('term');
-  const isPaymentSectionVisible = isCalculated && calculatedPayment > 0;
+  const amount = watch('amount');
+  const calculatedPayment = getCalculatedPayment(amount, term);
 
-  const onSubmit = (data) => {
-    setCalculatedPayment(getCalculatedPayment(data.amount, data.term));
+  useEffect(() => {
+    if (amount === '') {
+      setIsCalculated(false);
+    }
+  }, [amount]);
+
+  const onSubmit = () => {
     setIsCalculated(true);
   };
 
@@ -86,16 +88,13 @@ export const CalcModal = (props) => {
                 name="term"
                 value={option.value}
                 isActive={Number(term) === option.value}
-                {...register('term', {
-                  required: 'Выберите срок',
-                  valueAsNumber: true,
-                })}
+                {...register('term')}
               />
             ))}
           </div>
         </div>
       </form>
-      {isPaymentSectionVisible && (
+      {isCalculated && (
         <div className={styles.paymentPeriodSection}>
           <label className={styles.label}>Итого ваш платеж по кредиту:</label>
           <div className={styles.paymentPeriodToggle}>
@@ -113,7 +112,7 @@ export const CalcModal = (props) => {
             ))}
           </div>
           <p className={styles.paymentPeriodAmount}>
-            {calculatedPayment[paymentPeriod].toLocaleString('ru-RU')} рублей
+            {formatAmount(calculatedPayment[paymentPeriod])} рублей
           </p>
         </div>
       )}
@@ -121,7 +120,7 @@ export const CalcModal = (props) => {
         type="button"
         className={styles.footerButton}
         variant="primary"
-        disabled={!isValid || !isPaymentSectionVisible}
+        disabled={!isValid || !isCalculated}
         onClick={handleSubmit(onSubmitForm)}
       >
         Добавить
