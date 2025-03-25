@@ -1,4 +1,4 @@
-# Credit Calculator TZ
+# Credit Calculator
 
 ## Overview
 
