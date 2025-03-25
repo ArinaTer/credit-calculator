@@ -1,8 +1,8 @@
-import { useState } from 'react';
+import {useState} from 'react';
 
-import { Container } from './components/Container/Container';
-import { Button } from './components/Button/Button';
-import { CalcModal } from './modals/CalcModal/CalcModal';
+import {Container} from './components/Container/Container';
+import {Button} from './components/Button/Button';
+import {CalcModal} from './modals/CalcModal/CalcModal';
 
 import './App.css';
 
@@ -19,10 +19,12 @@ function App() {
 
   return (
     <Container>
-      <Button type="button" variant='outline' onClick={handleOpenModal}>
+      <Button type="button" variant="outline" onClick={handleOpenModal}>
         Расчет платежей
       </Button>
-      <CalcModal isOpen={isModalOpen} onClose={handleCloseModal} />
+      {isModalOpen && (
+        <CalcModal isOpen={isModalOpen} onClose={handleCloseModal} />
+      )}
     </Container>
   );
 }

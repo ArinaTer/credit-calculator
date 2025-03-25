@@ -7,22 +7,14 @@ export const calculatePayment = (amount, term) => {
   return Math.round(monthlyPayment);
 };
 
-export const getCalculatedPayment = (amount, term, paymentPeriod) => {
+export const getCalculatedPayment = (amount, term) => {
   const parsedAmount = parseFloat(amount);
   if (isNaN(parsedAmount) || parsedAmount <= 0 || !term) {
     return 0;
   }
   const monthlyPayment = calculatePayment(parsedAmount, Number(term));
-  return paymentPeriod === 'monthly' ? monthlyPayment : monthlyPayment * 12;
-};
-
-export const getIsPaymentSectionVisible = (isCalculated, calculatedPayment) => {
-  return isCalculated && calculatedPayment > 0;
-};
-
-export const handleCalc = (data, setValue) => {
-  if (!data.amount || !data.term) {
-    return;
-  }
-  setValue('isCalculated', true);
+  return {
+    monthly: monthlyPayment,
+    yearly: monthlyPayment * 12,
+  };
 };

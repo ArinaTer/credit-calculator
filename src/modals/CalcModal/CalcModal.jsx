@@ -1,57 +1,46 @@
 import {useForm} from 'react-hook-form';
+import {useState} from 'react';
 import {Modal} from '../../components/Modal/Modal';
 import {Input} from '../../components/Input/Input';
 import {RadioButton} from '../../components/RadioButton/RadioButton';
 import {Button} from '../../components/Button/Button';
-import {
-  getCalculatedPayment,
-  getIsPaymentSectionVisible,
-  handleCalc,
-} from './utils';
+import {getCalculatedPayment} from './utils';
 import {termOptions, paymentPeriodOptions} from './constants';
 
 import styles from './CalcModal.module.css';
 
 export const CalcModal = (props) => {
+  const [isCalculated, setIsCalculated] = useState(false);
+  const [paymentPeriod, setPaymentPeriod] = useState('monthly');
+  const [calculatedPayment, setCalculatedPayment] = useState({
+    monthly: 0,
+    yearly: 0,
+  });
+
   const {
     register,
     handleSubmit,
     watch,
-    setValue,
+    getValues,
     formState: {errors, isValid},
   } = useForm({
     mode: 'onChange',
     defaultValues: {
       amount: '',
       term: 12,
-      paymentPeriod: 'monthly',
-      isCalculated: false,
     },
   });
 
-  const amount = watch('amount');
   const term = watch('term');
-  const paymentPeriod = watch('paymentPeriod');
-  const isCalculated = watch('isCalculated');
+  const isPaymentSectionVisible = isCalculated && calculatedPayment > 0;
 
-  const calculatedPayment = getCalculatedPayment(amount, term, paymentPeriod);
+  const onSubmit = (data) => {
+    setCalculatedPayment(getCalculatedPayment(data.amount, data.term));
+    setIsCalculated(true);
+  };
 
-  const isPaymentSectionVisible = getIsPaymentSectionVisible(
-    isCalculated,
-    calculatedPayment,
-  );
-
-  const onCalc = (data) => handleCalc(data, setValue);
-
-  const onSubmitForm = (data) => {
-    const formData = {
-      amount: parseFloat(data.amount),
-      term: data.term,
-      paymentPeriod: data.paymentPeriod,
-      calculatedPayment,
-    };
-
-    console.log('Отправка данных формы:', formData);
+  const onSubmitForm = () => {
+    console.log('Отправка данных формы:', getValues());
 
     if (props.onClose) {
       props.onClose();
@@ -66,7 +55,7 @@ export const CalcModal = (props) => {
         Мы автоматически рассчитаем для вас ежемесячный платеж, чтобы вы могли
         лучше спланировать свои финансы.
       </p>
-      <form className={styles.form} onSubmit={handleSubmit(onCalc)}>
+      <form className={styles.form} onSubmit={handleSubmit(onSubmit)}>
         <label className={styles.label} htmlFor="amount">
           Ваша сумма кредита
         </label>
@@ -117,14 +106,14 @@ export const CalcModal = (props) => {
                 name="paymentPeriod"
                 value={option.value}
                 isActive={paymentPeriod === option.value}
-                {...register('paymentPeriod', {
-                  required: 'Выберите период',
-                })}
+                onClick={() => {
+                  setPaymentPeriod(option.value);
+                }}
               />
             ))}
           </div>
           <p className={styles.paymentPeriodAmount}>
-            {calculatedPayment.toLocaleString('ru-RU')} рублей
+            {calculatedPayment[paymentPeriod].toLocaleString('ru-RU')} рублей
           </p>
         </div>
       )}
