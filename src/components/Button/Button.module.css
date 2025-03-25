@@ -20,9 +20,11 @@
       padding: 12px 24px;
     }
 
-    &:hover {
-      background: #ffffff;
-      color: #000000;
+    @media (hover: hover) {
+      &:hover {
+        background: #ffffff;
+        color: #000000;
+      }
     }
 
     &:focus {
@@ -44,8 +46,10 @@
     line-height: 24px;
     width: min-content;
 
-    &:hover {
-      color: #f53a31;
+    @media (hover: hover) {
+      &:hover {
+        color: #f53a31;
+      }
     }
 
     &:focus {
@@ -73,8 +77,10 @@
       padding: 12px;
     }
 
-    &:hover {
-      background: #ea0029;
+    @media (hover: hover) {
+      &:hover {
+        background: #ea0029;
+      }
     }
 
     &:focus {
