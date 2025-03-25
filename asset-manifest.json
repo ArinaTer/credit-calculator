@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/credit-calculator/static/css/main.d8bd09a6.css",
+    "main.css": "/credit-calculator/static/css/main.2cca9d0a.css",
     "main.js": "/credit-calculator/static/js/main.7930fd39.js",
     "static/js/453.7fd211ac.chunk.js": "/credit-calculator/static/js/453.7fd211ac.chunk.js",
     "static/media/LabGrotesque-Medium.eot": "/credit-calculator/static/media/LabGrotesque-Medium.c538880bb9ba4878d650.eot",
@@ -17,12 +17,12 @@
     "static/media/LabGrotesque-Light.woff2": "/credit-calculator/static/media/LabGrotesque-Light.098291affdb12aefd649.woff2",
     "static/media/close.svg": "/credit-calculator/static/media/close.3d4b33a04a740848fb1e84cd34c782fe.svg",
     "index.html": "/credit-calculator/index.html",
-    "main.d8bd09a6.css.map": "/credit-calculator/static/css/main.d8bd09a6.css.map",
+    "main.2cca9d0a.css.map": "/credit-calculator/static/css/main.2cca9d0a.css.map",
     "main.7930fd39.js.map": "/credit-calculator/static/js/main.7930fd39.js.map",
     "453.7fd211ac.chunk.js.map": "/credit-calculator/static/js/453.7fd211ac.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d8bd09a6.css",
+    "static/css/main.2cca9d0a.css",
     "static/js/main.7930fd39.js"
   ]
 }
