@@ -116,15 +116,17 @@ export const CalcModal = (props) => {
           </p>
         </div>
       )}
-      <Button
-        type="button"
-        className={styles.footerButton}
-        variant="primary"
-        disabled={!isValid || !isCalculated}
-        onClick={handleSubmit(onSubmitForm)}
-      >
-        Добавить
-      </Button>
+      <footer>
+        <Button
+          type="button"
+          className={styles.footerButton}
+          variant="primary"
+          disabled={!isValid || !isCalculated}
+          onClick={handleSubmit(onSubmitForm)}
+        >
+          Добавить
+        </Button>
+      </footer>
     </Modal>
   );
 };

@@ -18,7 +18,7 @@ export const Modal = ({children, title, isOpen, onClose, ...props}) => {
   return (
     <div className={styles.overlay} {...props}>
       <div className={styles.modal} ref={ref}>
-        <header>
+        <header className={styles.header}>
           {title}
           <Button
             className={styles.closeButton}
