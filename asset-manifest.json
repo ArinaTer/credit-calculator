@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/credit-calculator-tz/static/css/main.126689c5.css",
+    "main.js": "/credit-calculator-tz/static/js/main.db45d8cc.js",
+    "static/js/453.7fd211ac.chunk.js": "/credit-calculator-tz/static/js/453.7fd211ac.chunk.js",
+    "static/media/LabGrotesque-Medium.eot": "/credit-calculator-tz/static/media/LabGrotesque-Medium.c538880bb9ba4878d650.eot",
+    "static/media/LabGrotesque-Regular.eot": "/credit-calculator-tz/static/media/LabGrotesque-Regular.a25b6e0c74e1245cac50.eot",
+    "static/media/LabGrotesque-Medium.ttf": "/credit-calculator-tz/static/media/LabGrotesque-Medium.dbfc938f23515b9be174.ttf",
+    "static/media/LabGrotesque-Regular.ttf": "/credit-calculator-tz/static/media/LabGrotesque-Regular.2b7d5ea425494e477703.ttf",
+    "static/media/LabGrotesque-Light.eot": "/credit-calculator-tz/static/media/LabGrotesque-Light.fe29fcf2584490562a72.eot",
+    "static/media/LabGrotesque-Light.ttf": "/credit-calculator-tz/static/media/LabGrotesque-Light.df3fbcdca778d26bdc58.ttf",
+    "static/media/LabGrotesque-Medium.woff": "/credit-calculator-tz/static/media/LabGrotesque-Medium.1713e506062cba02fd30.woff",
+    "static/media/LabGrotesque-Regular.woff": "/credit-calculator-tz/static/media/LabGrotesque-Regular.446ca450da8a218c9ee0.woff",
+    "static/media/LabGrotesque-Light.woff": "/credit-calculator-tz/static/media/LabGrotesque-Light.d032250e8bff240c6e9d.woff",
+    "static/media/LabGrotesque-Regular.woff2": "/credit-calculator-tz/static/media/LabGrotesque-Regular.f45d8fdb56a00269067a.woff2",
+    "static/media/LabGrotesque-Medium.woff2": "/credit-calculator-tz/static/media/LabGrotesque-Medium.03578f957623052bf1dd.woff2",
+    "static/media/LabGrotesque-Light.woff2": "/credit-calculator-tz/static/media/LabGrotesque-Light.098291affdb12aefd649.woff2",
+    "static/media/close.svg": "/credit-calculator-tz/static/media/close.3d4b33a04a740848fb1e84cd34c782fe.svg",
+    "index.html": "/credit-calculator-tz/index.html",
+    "main.126689c5.css.map": "/credit-calculator-tz/static/css/main.126689c5.css.map",
+    "main.db45d8cc.js.map": "/credit-calculator-tz/static/js/main.db45d8cc.js.map",
+    "453.7fd211ac.chunk.js.map": "/credit-calculator-tz/static/js/453.7fd211ac.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.126689c5.css",
+    "static/js/main.db45d8cc.js"
+  ]
+}
