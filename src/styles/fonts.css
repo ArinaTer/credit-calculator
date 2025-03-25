@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'Lab Grotesque';
+  src: url('../assets/fonts/LabGrotesque-Regular.eot');
+  src: local('Lab Grotesque Regular'), local('LabGrotesque-Regular'),
+    url('../assets/fonts/LabGrotesque-Regular.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/fonts/LabGrotesque-Regular.woff2') format('woff2'),
+    url('../assets/fonts/LabGrotesque-Regular.woff') format('woff'),
+    url('../assets/fonts/LabGrotesque-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lab Grotesque';
+  src: url('../assets/fonts/LabGrotesque-Medium.eot');
+  src: local('Lab Grotesque Medium'), local('LabGrotesque-Medium'),
+    url('../assets/fonts/LabGrotesque-Medium.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/fonts/LabGrotesque-Medium.woff2') format('woff2'),
+    url('../assets/fonts/LabGrotesque-Medium.woff') format('woff'),
+    url('../assets/fonts/LabGrotesque-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Lab Grotesque';
+  src: url('../assets/fonts/LabGrotesque-Light.eot');
+  src: local('Lab Grotesque Light'), local('LabGrotesque-Light'),
+    url('../assets/fonts/LabGrotesque-Light.eot?#iefix')
+      format('embedded-opentype'),
+    url('../assets/fonts/LabGrotesque-Light.woff2') format('woff2'),
+    url('../assets/fonts/LabGrotesque-Light.woff') format('woff'),
+    url('../assets/fonts/LabGrotesque-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}

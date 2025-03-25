@@ -1,0 +1,36 @@
+.radioLabel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50px;
+  background: #eef0f2;
+  cursor: pointer;
+  transition: all 0.3s;
+
+  &.active {
+    background: linear-gradient(
+        255.35deg,
+        #dc3131 0.83%,
+        rgba(255, 79, 79, 0) 108.93%
+      ),
+      #ff5e56;
+    color: #ffffff;
+  }
+}
+
+.radio {
+  display: none;
+}
+
+.radioText {
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  vertical-align: middle;
+  padding: 6px 12px;
+
+  .radioLabel.active & {
+    color: #fff;
+  }
+}

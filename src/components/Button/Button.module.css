@@ -1,0 +1,110 @@
+.button {
+  border-radius: 6px;
+  transition: all 0.2s;
+  font-family: 'Lab Grotesque', sans-serif;
+  font-weight: 500;
+  text-align: center;
+  vertical-align: middle;
+
+  &.outline {
+    border: 1px solid #ffffff;
+    color: #ffffff;
+    background: transparent;
+    width: auto;
+    font-size: 16px;
+    line-height: 24px;
+    padding: 16px 32px;
+    @media (max-width: 577.98px) {
+      line-height: 16px;
+      font-size: 14px;
+      padding: 12px 24px;
+    }
+
+    &:hover {
+      background: #ffffff;
+      color: #000000;
+    }
+
+    &:focus {
+      background: #ffffff;
+      color: #000000;
+    }
+
+    &:disabled {
+      background: #bec5cc;
+      border: 1px solid #bec5cc;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  }
+
+  &.text {
+    color: #ea0029;
+    font-size: 14px;
+    line-height: 24px;
+    width: min-content;
+
+    &:hover {
+      color: #f53a31;
+    }
+
+    &:focus {
+      color: #ea0029;
+    }
+  }
+
+  &.primary {
+    background: linear-gradient(
+        255.35deg,
+        #dc3131 0.83%,
+        rgba(255, 79, 79, 0) 108.93%
+      ),
+      #ff5e56;
+    box-shadow: 0px 0px 24px 0px #ea002954;
+    border: none;
+    width: 100%;
+    padding: 16px;
+    line-height: 24px;
+    font-size: 16px;
+    color: #ffffff;
+    @media (max-width: 577.98px) {
+      line-height: 16px;
+      font-size: 14px;
+      padding: 12px;
+    }
+
+    &:hover {
+      background: #ea0029;
+    }
+
+    &:focus {
+      background: #ea0029;
+    }
+
+    &:disabled {
+      background: #bec5cc;
+      cursor: not-allowed;
+      pointer-events: none;
+      box-shadow: none;
+    }
+  }
+
+  &.close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    width: 40px;
+    height: 40px;
+    @media (max-width: 577.98px) {
+      width: 24px;
+      height: 24px;
+    }
+
+    svg {
+      @media (max-width: 577.98px) {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
