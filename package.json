@@ -41,7 +41,7 @@
       "last 1 safari version"
     ]
   },
-  "homepage": "https://arinater.github.io/credit-calculator",
+  "homepage": "https://arinater.github.io/credit-calculator/",
   "devDependencies": {
     "gh-pages": "^6.3.0"
   }
